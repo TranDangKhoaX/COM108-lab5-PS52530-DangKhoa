@@ -28,11 +28,15 @@ int main() {
     return 0;
 }
 #endif
-
-// --- SINH VIÊN VIẾT CODE CỦA HÀM DƯỚI ĐÂY ---
 int phanPhoiATM(int soTien, int *to500, int *to200, int *to100, int *to50) {
-    // TODO: Viết code phân phối số tờ tiền và trả về tổng số tờ
-    // Yeu cau: Tuyet doi khong dung lenh in ra man hinh ben trong ham nay
-    
-    return 0;
+    int thanhToanHoaDon(float *soDuVi, float tongTien, float tyLeHoan, float *tienHoan) {
+    if (*soDuVi < tongTien) {
+        return 0;
+    }
+
+    *tienHoan = tongTien * tyLeHoan / 100;
+    *soDuVi = *soDuVi - tongTien + *tienHoan;
+
+    return 1;
+}
 }
