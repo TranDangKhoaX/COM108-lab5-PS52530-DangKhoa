@@ -32,14 +32,10 @@ int main() {
 
 // --- SINH VIÊN VIẾT CODE CỦA HÀM DƯỚI ĐÂY ---
 int thanhToanHoaDon(float *soDuVi, float tongTien, float tyLeHoan, float *tienHoan) {
-  int thanhToanHoaodon(float *soDuVi, float tongTien, float tyLeHoan, float *tienHoan) {
     if (*soDuVi < tongTien) {
         return 0;
     }
-
     *tienHoan = tongTien * tyLeHoan / 100;
     *soDuVi = *soDuVi - tongTien + *tienHoan;
-
     return 1;
-}
 }
