@@ -23,8 +23,8 @@ int main() {
 
 // --- SINH VIÊN VIẾT CODE CÁC HÀM DƯỚI ĐÂY ---
 float nhapSanLuongWh() {
-  float wh;
-   do {
+    float wh;
+    do {
         printf("Nhap san luong dien (Wh > 0): ");
         scanf("%f", &wh);
 
