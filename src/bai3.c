@@ -28,7 +28,7 @@ int main() {
     return 0;
 }
 #endif
-
+// --- SINH VIÊN VIẾT CODE CỦA HÀM DƯỚI ĐÂY ---
 
 int phanPhoiATM(int soTien, int *to500, int *to200, int *to100, int *to50) {
     if (soTien <= 0 || soTien % 50000 != 0) {
@@ -38,7 +38,7 @@ int phanPhoiATM(int soTien, int *to500, int *to200, int *to100, int *to50) {
         *to50 = 0;
         return 0;
     }
-
+1
     *to500 = soTien / 500000;
     soTien %= 500000;
 
@@ -50,6 +50,6 @@ int phanPhoiATM(int soTien, int *to500, int *to200, int *to100, int *to50) {
 
     *to50 = soTien / 50000;
 
-    return 1;
+    // SỬA TẠI ĐÂY: Trả về tổng số tờ thực tế được phân phối
+    return (*to500) + (*to200) + (*to100) + (*to50);
 }
-
