@@ -28,15 +28,47 @@ int main() {
     return 0;
 }
 #endif
-int phanPhoiATM(int soTien, int *to500, int *to200, int *to100, int *to50) {
-    int thanhToanHoaDon(float *soDuVi, float tongTien, float tyLeHoan, float *tienHoan) {
+int thanhToanHoaDon(float *soDuVi, float tongTien, float tyleHoan, float *tienHoan) {
     if (*soDuVi < tongTien) {
         return 0;
     }
-
-    *tienHoan = tongTien * tyLeHoan / 100;
+    
+    *tienHoan = tongTien * tyleHoan / 100;
     *soDuVi = *soDuVi - tongTien + *tienHoan;
-
+    
     return 1;
 }
+
+int thanhToanHoaDon(float *soDuVi, float tongTien, float tyleHoan, float *tienHoan) {
+    if (*soDuVi < tongTien) {
+        return 0;
+    }
+    
+    *tienHoan = tongTien * tyleHoan / 100;
+    *soDuVi = *soDuVi - tongTien + *tienHoan;
+    
+    return 1;
+}
+
+int phanPhoiATM(int soTien, int *to500, int *to200, int *to100, int *to50) {
+    if (soTien <= 0 || soTien % 50000 != 0) {
+        *to500 = 0;
+        *to200 = 0;
+        *to100 = 0;
+        *to50  = 0;
+        return 0;
+    }
+
+    *to500 = soTien / 500000;
+    soTien %= 500000;
+
+    *to200 = soTien / 200000;
+    soTien %= 200000;
+
+    *to100 = soTien / 100000;
+    soTien %= 100000;
+
+    *to50 = soTien / 50000;
+
+    return 1;
 }
